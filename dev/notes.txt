@@ -1,0 +1,3 @@
+Running docker with PWD volume on all OS
+
+https://stackoverflow.com/questions/41485217/mount-current-directory-as-a-volume-in-docker-on-windows-10
