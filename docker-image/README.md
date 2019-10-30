@@ -1,4 +1,4 @@
-# User Manual for using Docker for PEACH_LSM
+# User Manual for using Docker for zeropdk
 
 ## Step 1
 
@@ -18,7 +18,7 @@ shows:
 
 ```
 REPOSITORY           TAG                 IMAGE ID            CREATED             SIZE
-felimath/zeropdk   latest              8442046b162b        28 minutes ago      3.95GB
+felimath/zeropdk           latest              ee53a51120d1        17 hours ago        1.42GB
 ```
 
 ## Step 2
@@ -33,8 +33,11 @@ cd /path_to/git_repo/demo
 
 ```bash
 
-# Mac
-bash start-bash-mac.sh
+# Mac/Linux
+bash start-bash-unix.sh
+
+# Windows
+cmd start-bash-windows.bat
 
 ```
 
@@ -43,7 +46,10 @@ This opens a bash shell within dockerdata with an isolated linux environment wit
 If, instead, you want to directly open jupyter notebook inside the current directory, then use the following scripts:
 
 ```bash
-# Mac
+# Mac/Linux
 bash start-jupyter-mac.sh
+
+# Windows
+cmd start-jupyter-windows.bat
 ```
 
