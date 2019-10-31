@@ -12,4 +12,4 @@ docker push felimath/zeropdk
 Presenting with github pages
 https://medium.com/learning-machine-learning/present-your-data-science-projects-with-jupyter-slides-75f20735eb0f
 
-jupyter nbconvert 1.\ Presentation.ipynb --to slides --SlidesExporter.reveal_theme=serif --SlidesExporter.reveal_scroll=True --SlidesExporter.reveal_transition=none
+jupyter nbconvert 1.\ Presentation.ipynb --to slides --SlidesExporter.reveal_theme=solarized --SlidesExporter.reveal_scroll=True --SlidesExporter.reveal_transition=none
