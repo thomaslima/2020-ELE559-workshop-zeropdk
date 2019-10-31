@@ -5,7 +5,8 @@ https://stackoverflow.com/questions/41485217/mount-current-directory-as-a-volume
 Upload docker to cloud
 https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
-docker tag zeropdk:v1 felimath/zeropdk:latest
+docker tag zeropdk:v2 felimath/zeropdk:v2
+docker tag zeropdk:v2 felimath/zeropdk:latest
 docker push felimath/zeropdk
 
 Presenting with github pages

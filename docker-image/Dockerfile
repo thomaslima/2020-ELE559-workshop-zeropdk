@@ -12,7 +12,7 @@ RUN pip install matplotlib numpy scipy
 
 # Install interest package
 RUN pip install klayout
-RUN pip install zeropdk
+RUN pip install zeropdk==19.10b1
 
 # Configure jupyter environment
 RUN jupyter notebook --generate-config
