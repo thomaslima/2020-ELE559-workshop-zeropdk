@@ -9,8 +9,6 @@ from zeropdk.pcell import PCell
 import klayout.db as kdb
 
 logger = logging.getLogger()
-
-
 lyp_path = os.path.join(os.path.dirname(__file__), "EBeam.lyp")
 
 pwd = os.path.dirname(os.path.realpath(__file__))
