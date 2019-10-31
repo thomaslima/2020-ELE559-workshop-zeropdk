@@ -11,7 +11,8 @@ RUN pip install jupyter -U && pip install jupyterlab
 RUN pip install matplotlib numpy scipy
 
 # Install interest package
-RUN pip install zeropdk klayout
+RUN pip install klayout
+RUN pip install zeropdk
 
 # Configure jupyter environment
 RUN jupyter notebook --generate-config
