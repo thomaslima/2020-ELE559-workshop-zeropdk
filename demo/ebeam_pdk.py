@@ -1,6 +1,7 @@
 """ Minimal PDK for EBeam constructed with ZeroPDK. """
 
 import os
+import sys
 import logging
 from collections import abc
 from zeropdk import Tech
@@ -12,6 +13,8 @@ logger = logging.getLogger()
 
 lyp_path = os.path.join(os.path.dirname(__file__), "EBeam.lyp")
 
+pwd = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(pwd)
 
 # Technology file
 EBeam = Tech.load_from_xml(lyp_path)
@@ -150,6 +153,37 @@ class EBeamCell(EBeamLayersMixin, PositionMixin, PCell):
 
 
 PDKCell = EBeamCell
+
+# set LOCAL_GDS_DIR as (location of ebeam_pdk.py)/gds_cells
+LOCAL_GDS_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gds_cells")
+
+
+def GDSCell(cell_name, filename=None, gds_dir=LOCAL_GDS_DIR):
+    """
+        Args:
+            cell_name: cell within that file.
+            filename: is the gds file name.
+        Returns:
+            (class) a GDS_cell_base class that can be inherited
+    """
+    from zeropdk.pcell import GDSCell as DefaultGDSCell
+
+    defaultGDSClass = DefaultGDSCell(cell_name, filename=filename, gds_dir=gds_dir)
+
+    class pdkGDSClass(defaultGDSClass, PDKCell):
+        def draw_gds_cell(self, cell):
+            layout = cell.layout()
+            gdscell = self.get_gds_cell(layout)
+
+            origin, _, _ = self.origin_ex_ey()
+            cell.insert_cell(gdscell, origin, self.params.angle_ex)
+            return cell
+
+        def draw(self, cell):
+            return self.draw_gds_cell(cell), {}
+
+    return pdkGDSClass
+
 
 # Overriding default layers
 

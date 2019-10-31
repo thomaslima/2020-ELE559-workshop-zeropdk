@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -f Dockerfile -t zeropdk:v0 .
+docker build -f Dockerfile -t zeropdk:v1 .

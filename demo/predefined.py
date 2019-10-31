@@ -1,12 +1,7 @@
-from ebeam_pdk import PDKCell
+from ebeam_pdk import PDKCell, GDSCell
 from zeropdk.layout.waveguides import layout_waveguide
-from zeropdk.layout.routing import layout_connect_ports
 from zeropdk.layout import insert_shape
-import pya
-import os
-import sys
-from zeropdk.pcell import GDSCell as DefaultGDSCell
-from zeropdk.pcell import Port, port_to_pin_helper
+from zeropdk.pcell import Port
 from zeropdk.pcell import place_cell, ParamContainer
 from zeropdk.pcell import (
     TypeDouble,
@@ -20,43 +15,12 @@ from zeropdk.pcell import (
 )
 
 
-pwd = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(pwd)
-LOCAL_GDS_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), "gds_cells")
-
-
 def define_param(name, type, description, default=None, **kwargs):
     from zeropdk.pcell import PCellParameter
 
     return PCellParameter(
         name=name, type=type, description=description, default=default, **kwargs
     )
-
-
-def GDSCell(cell_name, filename=None, gds_dir=LOCAL_GDS_DIR):
-    """
-        Args:
-            cell_name: cell within that file.
-            filename: is the gds file name.
-        Returns:
-            (class) a GDS_cell_base class that can be inherited
-    """
-
-    defaultGDSClass = DefaultGDSCell(cell_name, filename=filename, gds_dir=gds_dir)
-
-    class pdkGDSClass(defaultGDSClass, PDKCell):
-        def draw_gds_cell(self, cell):
-            layout = cell.layout()
-            gdscell = self.get_gds_cell(layout)
-
-            origin, _, _ = self.origin_ex_ey()
-            cell.insert_cell(gdscell, origin, self.params.angle_ex)
-            return cell
-
-        def draw(self, cell):
-            return self.draw_gds_cell(cell), {}
-
-    return pdkGDSClass
 
 
 class Broadband_DC_te1550(GDSCell("ebeam_bdc_te1550", filename="ebeam_bdc_te1550.gds")):
@@ -123,11 +87,7 @@ class Waveguide_heater(PDKCell):
 
         w_mh = cp.mh_width
         length = cp.mh_length
-
-        # contacts and via widths (fixed 6um and 3um, respectively, to avoid DRC
-        # errors, perhaps can be user-selectable?)
-
-        w_contacts = 10
+        w_contacts = cp.w_contacts
 
         input_port_position = origin - length / 2 * ex
         output_port_postion = origin + length / 2 * ex

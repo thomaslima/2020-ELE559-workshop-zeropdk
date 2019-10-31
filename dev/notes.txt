@@ -4,3 +4,11 @@ https://stackoverflow.com/questions/41485217/mount-current-directory-as-a-volume
 
 Upload docker to cloud
 https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
+docker tag zeropdk:v1 felimath/zeropdk:latest
+docker push felimath/zeropdk
+
+Presenting with github pages
+https://medium.com/learning-machine-learning/present-your-data-science-projects-with-jupyter-slides-75f20735eb0f
+
+jupyter nbconvert 1.\ Presentation.ipynb --to slides --post serve --SlidesExporter.reveal_theme=serif --SlidesExporter.reveal_scroll=True --SlidesExporter.reveal_transition=none
