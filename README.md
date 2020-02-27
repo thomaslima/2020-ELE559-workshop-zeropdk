@@ -1,6 +1,6 @@
 # 2020-ELE559-workshop-zeropdk
 
-Workshop for 9 students in ELE559, offered in the Spring semester of 2019 at Princeton University.
+Workshop for 9 students in ELE559, offered in the Spring semester of 2020 at Princeton University.
 
 ## A few statistics from the students:
 
