@@ -45,13 +45,13 @@ Workshop for 9 students in ELE559, offered in the Spring semester of 2019 at Pri
 
 ### Question 5 (General comments and requests)
 
-- I would be interested in learning how to create a device that can perform spectroscopy with ring lasers and if possible frequency comb generation.
+- **I would be interested in learning how to create a device that can perform spectroscopy with ring lasers and if possible frequency comb generation.**
     + There is a silicon nitride foundry that we used recently, called LIGENTEC. It is run by someone called Tobias Kippenberg, who has published on frequency comb generation.
     + See https://www.nature.com/articles/s41566-018-0144-1 . One of the authors, Camille Brès, was a prior grad student in Prof. Prucnal's lab, who now also works in EPFL. She personally vouched for the foundry's quality, but if you need to be at the cutting edge of this field, it is best to collaborate with the faculty directly.
-- I'd really like a good overview of everything in question 2 that we need for laying out photonic chips.
+- **I'd really like a good overview of everything in question 2 that we need for laying out photonic chips**
     + Your ability to produce good-quality layouts will be proportional to your knowledge in all these areas.
     + I will try to give an overview of these subjects as needed but after the workshop I can send some references for further reading.
 
-[Pre-demo installation](https://tlima.me/2019-siepic-workshop-zeropdk/presentation/Demo%20Preparation.html) - Follow this if you don't have python3 with pip.
+[Pre-demo installation](https://tlima.me/2020-ELE559-workshop-zeropdk/presentation/Demo%20Preparation.html) - Follow this if you don't have python3 with pip.
 
-[Presentation Slides](https://tlima.me/2019-siepic-workshop-zeropdk/presentation/1.%20Presentation.slides.html)
+[Presentation Slides](https://tlima.me/2020-ELE559-workshop-zeropdk/presentation/1.%20Presentation.slides.html)
