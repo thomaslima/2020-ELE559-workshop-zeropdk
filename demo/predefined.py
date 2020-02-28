@@ -173,7 +173,7 @@ class MZI_Broadband_DC(Broadband_DC_te1550, YBranch_te1550, Waveguide_heater):
 
         Heater_1_MZI_Cell, Heater_1_MZI_Ports = Waveguide_heater(
             "waveguide heater",
-            params={"wg_length": cp.waveguide_length_MZI, "angle_ex": cp.angle_ex},
+            params={"mh_length": cp.waveguide_length_MZI, "angle_ex": cp.angle_ex},
         ).new_cell(layout)
         Heater_1_MZI_Ports = place_cell(
             cell,
